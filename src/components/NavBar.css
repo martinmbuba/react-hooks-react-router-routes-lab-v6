@@ -1,17 +1,14 @@
-.navbar > a{
-    display: inline-block;
-    box-sizing: border-box;
-    width: 70px;
-    padding: 5px;
-    margin: 0 6px 6px;
-    background: lightblue;
-    text-decoration: none;
-    text-align: center;
-    font-size: min(10vw, 15px) ;
-    color: black;
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
+
+function NavBar() {
+  return (
+    <nav className="navbar">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/directors">Directors</NavLink>
+      <NavLink to="/actors">Actors</NavLink>
+    </nav>
+  );
 }
-  
-a.active {
-    background: black;
-    color: white;
-}
+
+export default NavBar;
