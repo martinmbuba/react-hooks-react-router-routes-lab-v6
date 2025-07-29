@@ -5,7 +5,7 @@ function Actors() {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/actors")
+    fetch("/actors")
       .then((res) => res.json())
       .then(setActors);
   }, []);
@@ -21,7 +21,7 @@ function Actors() {
           <article key={actor.name}>
             <h2>{actor.name}</h2>
             <ul>
-              {actor.movies.map((m, i) => (
+              {(actor.movies || []).map((m, i) => (
                 <li key={i}>{m}</li>
               ))}
             </ul>

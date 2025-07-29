@@ -90,7 +90,7 @@ describe("Actors Component", () => {
 
   test("fetches and renders actor data on mount", async () => {
     render(<RouterProvider router={router} />);
-    expect(global.fetch).toHaveBeenCalledWith("http://localhost:3001/actors");
+    expect(global.fetch).toHaveBeenCalledWith("/actors");
 
     for (const actor of actors) {
       const actorName = await screen.findByText(actor.name);
